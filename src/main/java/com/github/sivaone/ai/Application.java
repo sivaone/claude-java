@@ -6,5 +6,6 @@ public class Application {
         System.out.println("Hello User!");
         ClaudeChat chat = new ClaudeChat();
         chat.converseWithAi();
+        System.exit(0);
     }
 }

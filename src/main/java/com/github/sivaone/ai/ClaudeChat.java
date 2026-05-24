@@ -36,8 +36,9 @@ public class ClaudeChat {
                 .maxTokens(1024)
                 .messages(messages)
                 .build();
-        Message message = client.messages().create(params);
-        Optional<TextBlock> textBlock = message.content().getFirst().text();
+        Message response = client.messages().create(params);
+        // System.out.println(response);
+        Optional<TextBlock> textBlock = response.content().getFirst().text();
         return textBlock.map(TextBlock::text).orElse("No response from AI");
     }
 
